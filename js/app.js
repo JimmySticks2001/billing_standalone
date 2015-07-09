@@ -1,6 +1,7 @@
 
 var gui = require("nw.gui"); // node-webkit
 var win = gui.Window.get();
+//Store the state of the window.
 var windowMaximized = false;
 //Store the timeoutID globally so we can remove the timer before setting a new one.
 var timeoutID;
@@ -16,6 +17,17 @@ win.showDevTools();
 var viewPartials = require('dot').process({ path: "./views"});
 
 $("#page").html(viewPartials.login);
+
+
+//Function to open up a notification on the top of the page. Type is a string: alert, success, or info.
+// Message is a string representing the message you want the user to see.
+function Notification(type, message) {
+  //clear the old timeout
+  window.clearTimeout(timeoutID);
+  //make a new one. Pretty much restarting the timer.
+  timeoutID = window.setTimeout(function(){$(".notice").slideUp(250)},5000);
+  $(".notice").html(viewPartials.notice({type: type, message: message})).slideDown(250);
+}
 
 
 //main javascript bullshit goes here
@@ -46,29 +58,17 @@ $(document).ready(function() {
 
   //if the log in button is clicked
   $("body").on('click', '#success', function(){
-    //clear the old timeout
-    window.clearTimeout(timeoutID);
-    //make a new one. Pretty much restarting the timer.
-    timeoutID = window.setTimeout(function(){$(".notice").slideUp(250)},5000);
-    $(".notice").html(viewPartials.notice({type: "success", message: "Something has been successful"})).slideDown(250);
+    Notification("success", "Something has been successful");
   });
 
   //if the log in button is clicked
   $("body").on('click', '#alert', function(){
-    //clear the old timeout
-    window.clearTimeout(timeoutID);
-    //make a new one. Pretty much restarting the timer.
-    timeoutID = window.setTimeout(function(){$(".notice").slideUp(250)},5000);
-    $(".notice").html(viewPartials.notice({type: "alert", message: "This is an alert"})).slideDown(250);
+    Notification("alert", "This is an alert");
   });
 
   //if the log in button is clicked
   $("body").on('click', '#info', function(){
-    //clear the old timeout
-    window.clearTimeout(timeoutID);
-    //make a new one. Pretty much restarting the timer.
-    timeoutID = window.setTimeout(function(){$(".notice").slideUp(250)},5000);
-    $(".notice").html(viewPartials.notice({type: "info", message: "This is informative"})).slideDown(250);
+    Notification("info", "This is informative");
   });
 
 
