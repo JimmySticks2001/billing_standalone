@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/app.js"></script>
   </head>
   <body>
     <div class="header row">
@@ -19,34 +18,11 @@
       <i class="material-icons header-icons" id="window_min">remove</i>
     </div>
 
-    <div class="body row scroll-y">
+    <div id="page" class="body row scroll-y">
       <!-- Your content goes here -->
-      <div class="mdl-grid card-width">
-        <div class="mdl-card mdl-shadow--4dp demo-card-wide">
-          <div class="mdl-card__title"></div>
-          <div class="mdl-card__supporting-text">
-            <div class="mdl-cell mdl-cell--12-col mdl-cell--middle">
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="user" pattern="[A-Z,a-z, ]*" />
-                <label class="mdl-textfield__label" for="user">User name</label>
-                <span class="mdl-textfield__error">Letters and spaces only</span>
-              </div>
-              </br>
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="pass" pattern="[A-Z,a-z, ]*" />
-                <label class="mdl-textfield__label" for="user">Password</label>
-                <span class="mdl-textfield__error">Letters and spaces only</span>
-              </div>
-            </div>
-          </div>
-          <div class="mdl-card__actions mdl-card--border">
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect margin-left-15">
-              <i class="material-icons md-36">arrow_forward</i>
-            </button>
-          </div>
-        </div>
-      </div>
+
     </div>
 
+    <script src="js/app.js"></script>
   </body>
 </html>

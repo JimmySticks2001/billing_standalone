@@ -8,6 +8,10 @@ win.restore();
 // show devtools to debug
 win.showDevTools();
 
+// get all of the dot html templates
+var viewPartials = require('dot').process({ path: "./views"});
+
+$("#page").html(viewPartials.login);
 
 
 //main javascript bullshit goes here
@@ -39,6 +43,7 @@ $(document).ready(function() {
 
 
 });//end ready
+
 
 win.on('unmaximize', function(){
   windowMaximized = false;
