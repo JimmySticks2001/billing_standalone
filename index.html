@@ -12,18 +12,26 @@
   </head>
   <body>
     <div class="header row">
-      <img id="header-logo" src="img/Netsmart_logo_smaller.png">
+      <!-- Left aligned menu below button -->
+      <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons header-menu">menu</i>
+      </button>
       <i class="material-icons header-icons md-18" id="window_close">clear</i>
       <i class="material-icons header-icons" id="window_max">crop_landscape</i>
       <i class="material-icons header-icons" id="window_min">remove</i>
     </div>
 
+    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
+      <li class="mdl-menu__item">Some Action</li>
+      <li class="mdl-menu__item">Another Action</li>
+      <li disabled class="mdl-menu__item">Disabled Action</li>
+      <li class="mdl-menu__item">Yet Another Action</li>
+    </ul>
+
     <div class="notice"></div>
 
     <div id="page" class="body row scroll-y">
-
       <!-- Your content goes here -->
-
     </div>
 
     <script src="js/app.js"></script>

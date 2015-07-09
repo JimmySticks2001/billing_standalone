@@ -40,8 +40,13 @@ body {
   padding-left: 4px;
   cursor: pointer;
 }
-
 .header-icons:hover { background-color: #448AFF; }
+
+.header-menu {
+  color: #DDDDDD;
+  -webkit-user-select: none;
+  -webkit-app-region: no-drag;
+}
 
 .demo-card-wide.mdl-card {
   width: 525px;
@@ -73,6 +78,7 @@ body {
   border-style: solid;
   border-width: 0px 0px 1px 0px;
   padding: 15px 0px 0px 14px;
+  box-shadow: 0px 2px 5px #BDBDBD;
 }
 .alert-box.success {
   background-color: #8cc63f;
