@@ -1,3 +1,3 @@
-<div data-alert class="alert-box {{=it.type}}">
+<div class="alert-box {{=it.type}}">
   {{=it.message}}
 </div>

@@ -2,6 +2,10 @@
 var gui = require("nw.gui"); // node-webkit
 var win = gui.Window.get();
 var windowMaximized = false;
+//Store the timeoutID globally so we can remove the timer before setting a new one.
+var timeoutID;
+
+//quick fix for the no window shadow for frameless windows.
 win.minimize();
 win.restore();
 
@@ -40,6 +44,32 @@ $(document).ready(function() {
     win.minimize();
   });
 
+  //if the log in button is clicked
+  $("body").on('click', '#success', function(){
+    //clear the old timeout
+    window.clearTimeout(timeoutID);
+    //make a new one. Pretty much restarting the timer.
+    timeoutID = window.setTimeout(function(){$(".notice").slideUp(250)},5000);
+    $(".notice").html(viewPartials.notice({type: "success", message: "Something has been successful"})).slideDown(250);
+  });
+
+  //if the log in button is clicked
+  $("body").on('click', '#alert', function(){
+    //clear the old timeout
+    window.clearTimeout(timeoutID);
+    //make a new one. Pretty much restarting the timer.
+    timeoutID = window.setTimeout(function(){$(".notice").slideUp(250)},5000);
+    $(".notice").html(viewPartials.notice({type: "alert", message: "This is an alert"})).slideDown(250);
+  });
+
+  //if the log in button is clicked
+  $("body").on('click', '#info', function(){
+    //clear the old timeout
+    window.clearTimeout(timeoutID);
+    //make a new one. Pretty much restarting the timer.
+    timeoutID = window.setTimeout(function(){$(".notice").slideUp(250)},5000);
+    $(".notice").html(viewPartials.notice({type: "info", message: "This is informative"})).slideDown(250);
+  });
 
 
 });//end ready
