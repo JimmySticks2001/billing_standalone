@@ -17,13 +17,7 @@
       </div>
     </div>
     <div class="mdl-card__actions mdl-card--border">
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect margin-left-15" id="success">
-        <i class="material-icons md-36">arrow_forward</i>
-      </button>
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect margin-left-15" id="alert">
-        <i class="material-icons md-36">arrow_forward</i>
-      </button>
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect margin-left-15" id="info">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect margin-left-15" id="login">
         <i class="material-icons md-36">arrow_forward</i>
       </button>
     </div>
