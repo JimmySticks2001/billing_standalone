@@ -7,6 +7,25 @@ controllers.UserController = function ($scope) {
     {username: 'bop', password: 'bop'},
     {username: 'test', password: 'test'}
   ];
+
+  $scope.userLogin = function () {
+    var notification = "";
+    for(i = 0; i < $scope.users.length; i++)
+    {
+      if($scope.users[i].username == $scope.userName && $scope.users[i].password == $scope.userPassword)
+      {
+        //redirect to upload
+        window.location.href = '#/upload';
+        break;
+      }
+      else
+      {
+        $scope.notification = "Username or password is incorrect"
+        break;
+      }
+    }
+
+  };
 };
 
 

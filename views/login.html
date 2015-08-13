@@ -4,20 +4,22 @@
     <div class="mdl-card__supporting-text">
       <div class="mdl-cell mdl-cell--12-col mdl-cell--middle">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="username" pattern="[A-Z,a-z, ]*" />
+          <input ng-model="userName" class="mdl-textfield__input" type="text" />
           <label class="mdl-textfield__label" for="user">User name</label>
-          <span class="mdl-textfield__error">Letters and spaces only</span>
         </div>
         </br>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="password" pattern="[A-Z,a-z, ]*" />
+          <input ng-model="userPassword" class="mdl-textfield__input" type="password" />
           <label class="mdl-textfield__label" for="user">Password</label>
-          <span class="mdl-textfield__error">Letters and spaces only</span>
+        </div>
+        <br />
+        <div id="loginError">
+          {{ notification }}
         </div>
       </div>
     </div>
     <div class="mdl-card__actions mdl-card--border">
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect margin-left-15" id="login">
+      <button ng-click="userLogin()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect margin-left-15">
         <i class="material-icons md-36">arrow_forward</i>
       </button>
     </div>

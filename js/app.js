@@ -22,13 +22,13 @@ win.showDevTools();
 
 //Function to open up a notification on the top of the page. Type is a string: alert, success, or info.
 // Message is a string representing the message you want the user to see.
-function Notification(type, message) {
+//function Notification(type, message) {
   //clear the old timeout
-  window.clearTimeout(timeoutID);
+  //window.clearTimeout(timeoutID);
   //make a new one. Pretty much restarting the timer.
-  timeoutID = window.setTimeout(function(){$(".notice").slideUp(250)},5000);
-  $(".notice").html(viewPartials.notice({type: type, message: message})).slideDown(250);
-}//end Notification
+  //timeoutID = window.setTimeout(function(){$(".notice").slideUp(250)},5000);
+  //$(".notice").html(viewPartials.notice({type: type, message: message})).slideDown(250);
+//}//end Notification
 
 
 //main javascript bullshit goes here
