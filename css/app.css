@@ -30,9 +30,15 @@
 .header_title{
   color: #DDDDDD;
   margin: auto;
-  width: 155px;
+  width: 157px;
   position: relative;
   top: 5px;
+}
+
+
+.menubar{
+  top: 27px;
+  width: 100%;
 }
 
 

@@ -39,25 +39,25 @@ $(document).ready(function() {
   $.material.init();
 
   //window controls
-  $("#window_close").click(function(){
+  $(".window_close").click(function(){
     //after things get complicated use win.on close to do shutdown work before exiting
     win.close();
   });
-  $("#window_max").click(function(){
+  $(".window_max").click(function(){
     if(windowMaximized)
     {
       win.unmaximize();
       windowMaximized = false;
-      $("#window_max").text("crop_landscape");
+      $(".window_max").text("crop_landscape");
     }
     else
     {
       win.maximize();
       windowMaximized = true;
-      $("#window_max").text("filter_none");
+      $(".window_max").text("filter_none");
     }
   });
-  $("#window_min").click(function(){
+  $(".window_min").click(function(){
     win.minimize();
   });
 

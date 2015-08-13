@@ -3719,7 +3719,7 @@ body .jumbotron-material-blue-grey,
 .btn-group-vertical {
   position: relative;
   border-radius: 2px;
-  margin: 10px 1px;
+  /* margin: 10px 1px; */
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0 1px 6px 0 rgba(0, 0, 0, 0.12);
   transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }

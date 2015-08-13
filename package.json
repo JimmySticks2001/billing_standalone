@@ -41,8 +41,8 @@
         "mac_icon": "Netsmart_logo.png",
         "position": "center",
         "show_in_taskbar": true,
-        "height": 600,
-        "width": 800,
+        "height": 768,
+        "width": 1024,
         "transparent": false,
         "icon": "Netsmart_logo.png"
     },
