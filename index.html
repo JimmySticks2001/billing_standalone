@@ -2,41 +2,42 @@
 <html ng-app="application">
   <head>
     <meta charset="utf-8" />
-    <title>Testing shit</title>
+    <title>Testing bologna</title>
     <link rel="stylesheet" href="css/app.css">
-    <!-- <link rel="stylesheet" href="css/foundation-icons.css" /> -->
-    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.blue_grey-blue.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css
+    to style the ripple effect -->
+    <link href="css/roboto.css" rel="stylesheet">
+    <link href="css/material.css" rel="stylesheet">
+    <link href="css/ripples.css" rel="stylesheet">
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
     <script src="./js/controllers/application.js"></script>
     <script src="./js/routes/routes.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
 
     <!-- Header -->
     <div class="header row">
-      <!-- Left aligned menu below button -->
-      <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons header-menu">menu</i>
-      </button>
-      <i class="material-icons header-icons md-18" id="window_close">clear</i>
-      <i class="material-icons header-icons" id="window_max">crop_landscape</i>
-      <i class="material-icons header-icons" id="window_min">remove</i>
+      <i class="material-icons header_icons md-18" id="window_close">clear</i>
+      <i class="material-icons header_icons" id="window_max">crop_landscape</i>
+      <i class="material-icons header_icons" id="window_min">remove</i>
+      <div class="header_title">Avatar Billing Verification</div>
     </div>
-
-    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
-      <li class="mdl-menu__item" id="menu_login">Login</li>
-      <li class="mdl-menu__item" id="menu_upload">Upload 837</li>
-    </ul>
 
     <!-- main content -->
     <div id="page" class="body row scroll-y">
       <div ng-view></div>
     </div> <!--end page -->
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/ripples.js"></script>
+    <script src="js/material.js"></script>
     <script src="js/app.js"></script>
 
   </body>

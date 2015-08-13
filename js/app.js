@@ -17,7 +17,8 @@ win.showDevTools();
 //var viewPartials = require('dot').process({ path: "./views"});
 
 // require xlsx module so we can read Excel files.
-//if(typeof require !== 'undefined') XLSX = require('xlsx');
+if(typeof require !== 'undefined') XLSX = require('xlsx');
+
 //$("#page").html(viewPartials.login);
 
 //Function to open up a notification on the top of the page. Type is a string: alert, success, or info.
@@ -33,6 +34,9 @@ win.showDevTools();
 
 //main javascript bullshit goes here
 $(document).ready(function() {
+
+  // This command is used by bootstrap-material-design to initialize some elements and make them work properly
+  $.material.init();
 
   //window controls
   $("#window_close").click(function(){
@@ -65,6 +69,9 @@ $(document).ready(function() {
   //if the upload 837 menu button is clicked
   $("body").on('click', '#menu_upload', function(){
     window.location.href = '#/upload';
+  });
+  $("body").on('click', '#init', function(){
+    $.material.init();
   });
 
 });//end ready

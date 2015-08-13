@@ -1,27 +1,17 @@
-<div class="mdl-grid card-width">
-  <div class="mdl-card mdl-shadow--4dp demo-card-wide">
-    <div class="mdl-card__title"></div>
-    <div class="mdl-card__supporting-text">
-      <div class="mdl-cell mdl-cell--12-col mdl-cell--middle">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input ng-model="userName" class="mdl-textfield__input" type="text" />
-          <label class="mdl-textfield__label" for="user">User name</label>
-        </div>
-        </br>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input ng-model="userPassword" class="mdl-textfield__input" type="password" />
-          <label class="mdl-textfield__label" for="user">Password</label>
-        </div>
-        <br />
-        <div id="loginError">
-          {{ notification }}
-        </div>
-      </div>
-    </div>
-    <div class="mdl-card__actions mdl-card--border">
-      <button ng-click="userLogin()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect margin-left-15">
-        <i class="material-icons md-36">arrow_forward</i>
-      </button>
+<div class="well login">
+  <div class="well_login_image"></div>
+  <div class="form-group">
+    <input class="form-control" id="username" type="text" placeholder="Username">
+  </div>
+  <div class="form-group">
+    <input class="form-control" id="password" type="password" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <div class="col-lg-10 col-lg-offset-2">
+      <button class="btn btn-default">Cancel</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </div>
   </div>
 </div>
+
+<a href="javascript:void(0)" class="btn btn-default" id="init">init</a>
