@@ -14,11 +14,11 @@ win.restore();
 win.showDevTools();
 
 // get all of the dot html templates
-var viewPartials = require('dot').process({ path: "./views"});
+//var viewPartials = require('dot').process({ path: "./views"});
 
 // require xlsx module so we can read Excel files.
-if(typeof require !== 'undefined') XLSX = require('xlsx');
-$("#page").html(viewPartials.upload);
+//if(typeof require !== 'undefined') XLSX = require('xlsx');
+//$("#page").html(viewPartials.login);
 
 //Function to open up a notification on the top of the page. Type is a string: alert, success, or info.
 // Message is a string representing the message you want the user to see.
@@ -59,13 +59,12 @@ $(document).ready(function() {
 
   //if the log in menu button is clicked
   $("body").on('click', '#menu_login', function(){
-    $("#page").html(viewPartials.login);
-    componentHandler.registerElement("body");
+    window.location.href = '#/login';
   });
 
   //if the upload 837 menu button is clicked
-  $("body").on('click', '#menu_upload_837', function(){
-    $("#page").html(viewPartials.upload);
+  $("body").on('click', '#menu_upload', function(){
+    window.location.href = '#/upload';
   });
 
 });//end ready

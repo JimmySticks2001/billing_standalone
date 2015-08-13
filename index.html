@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="application">
   <head>
     <meta charset="utf-8" />
     <title>Testing shit</title>
@@ -9,8 +9,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    <script src="./js/controllers/application.js"></script>
+    <script src="./js/routes/routes.js"></script>
   </head>
   <body>
+
+    <!-- Header -->
     <div class="header row">
       <!-- Left aligned menu below button -->
       <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
@@ -23,15 +29,17 @@
 
     <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
       <li class="mdl-menu__item" id="menu_login">Login</li>
-      <li class="mdl-menu__item" id="menu_upload_837">Upload 837</li>
+      <li class="mdl-menu__item" id="menu_upload">Upload 837</li>
     </ul>
 
     <div class="notice"></div>
 
+    <!-- main content -->
     <div id="page" class="body row scroll-y">
-      <!-- Your content goes here -->
-    </div>
+      <div ng-view></div>
+    </div> <!--end page -->
 
     <script src="js/app.js"></script>
+
   </body>
 </html>
