@@ -17,6 +17,8 @@
 }
 .body.row { top: 56px; bottom: 0px; } /* top must be header height, bottom must be footer height */
 
+
+/* Header stuff */
 .header_icons {
   -webkit-user-select: none;
   -webkit-app-region: no-drag;
@@ -34,14 +36,23 @@
   position: relative;
   top: 5px;
 }
+.header_logo{
+  float: left;
+  width: 45px;
+  height: 25px;
+  margin-top: 2px;
+  margin-left: 2px;
+}
 
 
+/* Menubar stuff */
 .menubar{
   top: 27px;
   width: 100%;
 }
 
 
+/* Login stuff */
 .well.login{
   width: 525px;
   margin: auto;
@@ -53,13 +64,12 @@
   margin-left: -10px;
   background: url('../img/smaller.png') center no-repeat;
 }
-
-
 .loginError{
   color: #DE3226;
 }
 
 
+/* Upload stuff */
 .drop-box {
   position:absolute;
   width: 100%;
@@ -82,4 +92,7 @@
 }
 .dragover {
   border: 5px dashed #009688;
+}
+.uploadContents {
+  white-space: pre;
 }

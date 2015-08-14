@@ -41,7 +41,18 @@ controllers.UploadController = function ($scope, Upload) {
 
   $scope.uploadExcel = function (file) {
     var workbook = XLSX.readFile($scope.file[0].path);
-    console.log(workbook);
+
+    var result = [];
+  	workbook.SheetNames.forEach(function(sheetName) {
+  		var csv = XLSX.utils.sheet_to_csv(workbook.Sheets[sheetName]);
+  		if(csv.length > 0){
+  			result.push("SHEET: " + sheetName);
+  			result.push("");
+  			result.push(csv);
+  		}
+  	});
+  	$scope.fileContents = result.join("\n");
+    $(".drop-box").hide();
   };
 
 };
