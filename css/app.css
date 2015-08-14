@@ -15,7 +15,7 @@
   border-width: 0px 0px 1px 0px;
   border-color: #4E4E4E;
 }
-.body.row { top: 80px; bottom: 0px; } /* top must be header height, bottom must be footer height */
+.body.row { top: 56px; bottom: 0px; } /* top must be header height, bottom must be footer height */
 
 .header_icons {
   -webkit-user-select: none;
@@ -45,10 +45,41 @@
 .well.login{
   width: 525px;
   margin: auto;
+  margin-top: 25px;
 }
 .well_login_image{
   height: 91px;
   width: 500px;
   margin-left: -10px;
   background: url('../img/smaller.png') center no-repeat;
+}
+
+
+.loginError{
+  color: #DE3226;
+}
+
+
+.drop-box {
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  background: #F8F8F8;
+  border: 5px dashed #DDD;
+}
+.drop-box p {
+  height: 0px;
+  width: 485px;
+  margin: auto;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  font-size: 2.5em;
+  font-weight: 500;
+  color: #919191;
+}
+.dragover {
+  border: 5px dashed #009688;
 }

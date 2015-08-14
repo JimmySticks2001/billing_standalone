@@ -1,11 +1,14 @@
-<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-  <input class="mdl-textfield__input" type="text" />
-  <label class="mdl-textfield__label" >file</label>
+<div
+  class="drop-box"
+  ng-model="file"
+  ngf-drop
+  ngf-drag-over-class="dragover"
+  ngf-multiple="true"
+  ngf-allow-dir="false"
+  ngf-accept="'.xlsx'">
+  <p>Drop billing 837 Excel file here!</p>
 </div>
 
-<button ng-click="uploadExcel()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-js-ripple-effect margin-left-15">
-  <i class="material-icons md-36">arrow_forward</i>
-</button>
-
+{{filepath}}
 
 <script>(function(){$.material.init()})()</script>

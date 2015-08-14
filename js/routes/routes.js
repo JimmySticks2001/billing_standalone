@@ -5,7 +5,7 @@ application.config(function ($routeProvider) {
       templateUrl: './views/login.html'
     })
     .when('/upload', {
-      controller: 'UserController',
+      controller: 'UploadController',
       templateUrl: './views/upload.html'
     })
     .otherwise({ redirectTo: '/'});

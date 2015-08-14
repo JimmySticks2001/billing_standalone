@@ -5,3 +5,17 @@ This is a standalone, desktop all that is used to test Avatar billing before fin
 ##### To-do list
 
 * Find out what the hell it is supposed to do.
+
+##### Usefull things
+
+# Node Webkit cheatsheet
+https://gentlenode.com/journal/node-webkit-1-complete-cheatsheet/26
+
+# Node Excel library
+https://www.npmjs.com/package/xlsx
+
+# Bootstrap material design
+http://fezvrasta.github.io/bootstrap-material-design/
+
+# Angular JS file upload 
+https://github.com/danialfarid/ng-file-upload

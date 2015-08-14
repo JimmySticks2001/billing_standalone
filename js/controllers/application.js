@@ -1,7 +1,8 @@
 //application module which contains all of the controllers
-var application = angular.module("application", ['ngRoute']);
+var application = angular.module("application", ['ngRoute', 'ngFileUpload']);
 var controllers = {};
 
+//Handles user login and whatnot
 controllers.UserController = function ($scope) {
   $scope.users = [
     {username: 'bop', password: 'bop'},
@@ -29,17 +30,21 @@ controllers.UserController = function ($scope) {
 };
 
 
-controllers.UserController = function ($scope) {
+//Handles file upload and excel parsing
+controllers.UploadController = function ($scope, Upload) {
 
-  $scope.uploadExcel = function () {
-    var workbook = XLSX.readFile('test.xlsx');
+  $scope.$watch('file', function (file) {
+    if(file && file.length){
+      $scope.uploadExcel($scope.file);
+    }
+  });
+
+  $scope.uploadExcel = function (file) {
+    var workbook = XLSX.readFile($scope.file[0].path);
+    console.log(workbook);
   };
 
 };
-
-
-
-
 
 
 //attach all of the controllers to the application module

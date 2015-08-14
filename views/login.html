@@ -1,16 +1,18 @@
 <div class="well login">
   <div class="well_login_image"></div>
-    <div class="form-group">
-      <input class="form-control" id="username" type="text" placeholder="Username">
-    </div>
-    <div class="form-group">
-      <input class="form-control" id="password" type="password" placeholder="Password">
-    </div>
-    <div class="form-group">
-      <div class="col-lg-10 col-lg-offset-2">
-        <button class="btn btn-default">Cancel</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
+  <div class="form-group">
+    <input ng-model="userName" class="form-control" type="text" placeholder="Username">
+  </div>
+  <div class="form-group">
+    <input ng-model="userPassword" class="form-control" type="password" placeholder="Password">
+  </div>
+  <div class="loginError">
+    {{ notification }}
+  </div>
+  <div class="form-group">
+    <div class="col-lg-10 col-lg-offset-2">
+      <button class="btn btn-default">Cancel</button>
+      <button ng-click="userLogin()" class="btn btn-primary">Submit</button>
     </div>
   </div>
 </div>
