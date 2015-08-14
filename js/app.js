@@ -13,6 +13,9 @@ win.restore();
 // show devtools to debug
 win.showDevTools();
 
+//set the window's minimum size
+win.setMinimumSize(545, 545);
+
 // get all of the dot html templates
 //var viewPartials = require('dot').process({ path: "./views"});
 
@@ -34,9 +37,6 @@ if(typeof require !== 'undefined') XLSX = require('xlsx');
 
 //main javascript bullshit goes here
 $(document).ready(function() {
-
-  // This command is used by bootstrap-material-design to initialize some elements and make them work properly
-  $.material.init();
 
   //window controls
   $(".window_close").click(function(){
