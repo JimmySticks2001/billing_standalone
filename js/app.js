@@ -25,9 +25,6 @@ win.setMinimumSize(545, 545);
 //use the fs node module to read text files
 fs = require('fs');
 
-//use edi.js library to parse edi files
-edi = require('edi');
-
 //$("#page").html(viewPartials.login);
 
 //Function to open up a notification on the top of the page. Type is a string: alert, success, or info.
