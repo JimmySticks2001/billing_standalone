@@ -28,7 +28,10 @@
   padding-right: 4px;
   padding-left: 4px;
 }
-.header_icons:hover { background-color: #448AFF; }
+.header_icons:hover {
+  background-color: #448AFF;
+  cursor: default;
+}
 .header_title{
   color: #DDDDDD;
   margin: auto;

@@ -35,23 +35,14 @@ controllers.UploadController = function ($scope, Upload) {
 
   $scope.$watch('file', function (file) {
     if(file && file.length){
-      $scope.uploadExcel($scope.file);
+      $scope.uploadExcel($scope.file[0].path);
     }
   });
 
-  $scope.uploadExcel = function (file) {
-    var workbook = XLSX.readFile($scope.file[0].path);
-
-    var result = [];
-  	workbook.SheetNames.forEach(function(sheetName) {
-  		var csv = XLSX.utils.sheet_to_csv(workbook.Sheets[sheetName]);
-  		if(csv.length > 0){
-  			result.push("SHEET: " + sheetName);
-  			result.push("");
-  			result.push(csv);
-  		}
-  	});
-  	$scope.fileContents = result.join("\n");
+  $scope.uploadExcel = function (filePath) {
+    data = fs.readFileSync(filePath, 'utf8');
+  	$scope.fileContents = data;
+    console.log(data);
     $(".drop-box").hide();
   };
 

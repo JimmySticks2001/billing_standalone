@@ -20,7 +20,13 @@ win.setMinimumSize(545, 545);
 //var viewPartials = require('dot').process({ path: "./views"});
 
 // require xlsx module so we can read Excel files.
-if(typeof require !== 'undefined') XLSX = require('xlsx');
+//if(typeof require !== 'undefined') XLSX = require('xlsx');
+
+//use the fs node module to read text files
+fs = require('fs');
+
+//use edi.js library to parse edi files
+edi = require('edi');
 
 //$("#page").html(viewPartials.login);
 
