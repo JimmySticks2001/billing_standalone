@@ -25,6 +25,13 @@ win.setMinimumSize(545, 545);
 //use the fs node module to read text files
 fs = require('fs');
 
+//padding function for number formatting leading zeros
+function pad(num, size) {
+  var s = num+"";
+  while (s.length < size) s = "0" + s;
+  return s;
+}
+
 //$("#page").html(viewPartials.login);
 
 //Function to open up a notification on the top of the page. Type is a string: alert, success, or info.
