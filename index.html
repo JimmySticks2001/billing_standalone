@@ -23,7 +23,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <body>
+  <body ng-controller="UploadController">
 
     <!-- Header -->
     <div class="header row">
@@ -41,13 +41,15 @@
           File
         </a>
         <ul class="dropdown-menu">
-          <li><a href="#/">Login</a></li>
-          <li><a href="#/upload">Upload</a></li>
+          <!-- <li><a href="#/">Login</a></li> -->
+          <li><a href="" ng-click="newUpload()">Import 837</a></li>
+          <!-- <li class="disabled" id="export835"><a href="" ng-click="export835()">Export 835</a></li> -->
           <li class="divider"></li>
-          <li><a href="javascript:void(0)">Preferences</a></li>
+          <!-- <li><a href="javascript:void(0)">Preferences</a></li> -->
           <li><a href="javascript:void(0)" class="window_close">Exit</a></li>
         </ul>
       </div>
+  <!--
       <div class="btn-group">
         <a href="bootstrap-elements.html" data-target="#" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
           Sandwiches
@@ -70,11 +72,45 @@
           <li><a href="javascript:void(0)">Exit</a></li>
         </ul>
       </div>
+    -->
     </div>
+
 
     <!-- main content -->
     <div id="page" class="body row scroll-y scroll-x">
-      <div ng-view></div>
+      <!-- <div ng-view></div> -->
+      <div
+        class="drop-box"
+        ng-model="file"
+        ngf-drop
+        ngf-drag-over-class="dragover"
+        ngf-multiple="true"
+        ngf-allow-dir="false"
+        ngf-accept="'.txt'">
+        <p>Drop 837 text file here!</p>
+      </div>
+      <div class="row filePanels">
+        <div class="col-sm-6">
+          <div class="panel panel-default">
+            <!-- <div class="panel-heading">837</div> -->
+            <div class="panel-body fileStuffs">
+              <h3>{{ fileName }}</h3>
+              <p>{{ fileContents }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="panel panel-default">
+            <!-- <div class="panel-heading">835</div> -->
+            <div class="panel-body fileStuffs">
+              <input type="text" class="x835filenamebuff form-control input-lg" placeholder="835 filename">
+              <p>{{ x835FileContents }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <input style="" id="fileDialog" class="displayNone" type="file" nwsaveas="835.txt"/>
     </div> <!--end page -->
 
     <script src="js/bootstrap.js"></script>
