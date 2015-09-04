@@ -15,6 +15,9 @@
   border-width: 0px 0px 1px 0px;
   border-color: #4E4E4E;
 }
+.header.row.blur {
+  background-color: #777777;
+}
 .body.row { top: 56px; bottom: 0px; } /* top must be header height, bottom must be footer height */
 
 
@@ -135,24 +138,19 @@
 .fileStuffs {
   white-space: pre-wrap;
   overflow-x: auto;
-
-  /* position:absolute; */
-  /* width: 100%; */
-  /* height: 100%; */
-  /* background: #FFF; */
-  /* padding-left: 10px; */
-  /* border: 1px solid #EFEFEF; */
 }
-.fileNameMargin {
-  margin-top: -45px;
+.panelTitle{
+  margin-top: -100px;
 }
-
-.x835filenamebuff {
-  margin-top: -94px;
-}
-.x835filenamebuttondiv {
+.x835filenameButton{
   display: flex;
+  margin-bottom: -10px;
 }
+.x835filenameButton > button{
+  margin: 10px 0px 0px 10px !important;
+}
+
+
 
 .displayNone {
   display: none !important;

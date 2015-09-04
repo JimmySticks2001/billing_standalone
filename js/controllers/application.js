@@ -147,7 +147,7 @@
 
     //exports a text file containing all of the generated 835 data
     $scope.export835 = function () {
-      console.log($scope.x835saveFileName);
+      //validate the filename here.
 
       var chooser = $('#fileDialog');
       chooser.unbind('change');

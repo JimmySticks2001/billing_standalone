@@ -101,3 +101,13 @@ win.on('maximize', function(){
   windowMaximized = true;
   $("#window_max").text("filter_none");
 });
+
+
+// Event called when the window gains focus
+win.on('focus', function() {
+  $(".header").removeClass("blur");
+});
+// Event called when the window looses focus
+win.on('blur', function() {
+  $(".header").addClass("blur");
+});

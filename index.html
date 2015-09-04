@@ -105,32 +105,35 @@
       <div class="row filePanels">
         <div class="col-sm-6">
           <div class="panel panel-default">
-            <!-- <div class="panel-heading">837</div> -->
             <div class="panel-body fileStuffs">
-              <h3 class="fileNameMargin">{{ fileName }}</h3>
-              <p>{{ fileContents }}</p>
+
+              <div class="panelTitle">
+                <h3>{{ fileName }}</h3>
+                <p>{{ fileContents }}</p>
+              </div>
+
+
             </div>
           </div>
         </div>
         <div class="col-sm-6">
           <div class="panel panel-default">
-            <!-- <div class="panel-heading">835</div> -->
             <div class="panel-body fileStuffs">
 
-
-              <div class="input-group x835filenamebuff">
-                <input ng-model="x835saveFileName" type="text" class="form-control input-lg" placeholder="835 filename">
-                <span class="input-group-btn">
-                  <button ng-click="export835()" class="btn btn-primary btn-flat" type="button"><i class="mdi-content-save"></i></button>
-                </span>
+              <div class="panelTitle">
+                <div class="x835filenameButton">
+                  <h3>Generated 835</h3>
+                  <button ng-click="export835()" class="btn btn-fab btn-fab-mini btn-raised btn-primary" type="button"><i class="mdi-content-save"></i></button>
+                </div>
+                <p>{{ x835FileContents }}</p>
               </div>
-              <p>{{ x835FileContents }}</p>
+
             </div>
           </div>
         </div>
       </div>
 
-      <input style="" id="fileDialog" class="displayNone" type="file" nwsaveas="{{x835saveFileName}}.txt"/>
+      <input style="" id="fileDialog" class="displayNone" type="file" nwsaveas="835.txt"/>
     </div> <!--end page -->
 
     <script src="js/bootstrap.js"></script>
