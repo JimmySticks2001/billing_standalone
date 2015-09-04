@@ -84,6 +84,11 @@ $(document).ready(function() {
     $.material.init();
   });
 
+  //Use mousetrap js lib to listen to control+n to call angular newUpload function in the UploadController
+  Mousetrap.bind('ctrl+n', function() {
+    angular.element(document.getElementById("body")).scope().newUpload();
+  });
+
 });//end ready
 
 

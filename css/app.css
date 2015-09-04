@@ -53,6 +53,38 @@
   top: 27px;
   width: 100%;
 }
+.menuItem{
+  fload: left;
+}
+.menuCommand{
+  float: right;
+}
+
+/* alert transitions for neat looking messages */
+.alert{
+  position: absolute;
+  z-index: 9;
+  width: 100%;
+}
+.alert.ng-enter{
+  transition: 0.3s ease all;
+  opacity: 0;
+  transform: translate(0px,-52px);
+}
+.alert.ng-enter.ng-enter-active{
+  opacity: 1;
+  transform: translate(0px,0px);
+}
+.alert.ng-leave{
+  transition: 0.3s ease all;
+  opacity: 1;
+  transform: translate(0px,0px);
+}
+.alert.ng-leave.ng-leave-active{
+  opacity: 0;
+  transform: translate(0px,-52px);
+}
+
 
 
 /* Login stuff */
@@ -111,9 +143,15 @@
   /* padding-left: 10px; */
   /* border: 1px solid #EFEFEF; */
 }
+.fileNameMargin {
+  margin-top: -45px;
+}
 
 .x835filenamebuff {
-  margin-top: 6px;
+  margin-top: -94px;
+}
+.x835filenamebuttondiv {
+  display: flex;
 }
 
 .displayNone {

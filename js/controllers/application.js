@@ -1,6 +1,6 @@
 //(function() {
   //application module which contains all of the controllers
-  var application = angular.module("application", ['ngRoute', 'ngFileUpload']);
+  var application = angular.module("application", ['ngRoute', 'ngFileUpload', 'ngAnimate']);
   //var application = angular.module("application", ['ngRoute', 'ngFileUpload']);
 
   //var controllers = {};
@@ -35,9 +35,10 @@
   */
 
   //Handles file upload and excel parsing
-  application.controller('UploadController', ['$scope', function($scope) {
+  application.controller('UploadController', ['$scope', '$timeout', '$interval', function($scope, $timeout, $interval) {
 
     $scope.print835 = ":D";
+    //$scope.alert = false;
 
     //when a file is dropped into the window...
     $scope.$watch('file', function (file) {
@@ -55,6 +56,15 @@
         }
         x837array.splice(0,1); //take off the first empty element from initilizing.
         x837array.splice(x837array.length-1,1); //take off the last empty element.
+
+        //check to see if this file is indeed an 837 file by checking the field which describes what type of edi file it is.
+        if(x837array[2][1] !== "837") {
+          //$scope.alert = true;
+          $scope.newAlert("danger","Unable to process file. Make sure it is a valid EDI, X12, 837, file in .txt format. ");
+          return false;
+        } else {
+          $scope.closeAlert(); //close any open alerts if there are any.
+        }
 
         var now = new Date();
 
@@ -131,12 +141,13 @@
 
         $(".drop-box").hide();
         $(".filePanels").show();
+        $.material.init()
       }
     });
 
     //exports a text file containing all of the generated 835 data
     $scope.export835 = function () {
-      console.log($scope.print835);
+      console.log($scope.x835saveFileName);
 
       var chooser = $('#fileDialog');
       chooser.unbind('change');
@@ -155,6 +166,32 @@
       $(".drop-box").show();
       $(".filePanels").hide();
       $("#export835").addClass("disabled");
+      //$timeout(function() {
+      //  $scope.alert = false;
+      //});
+      //$scope.$apply();
+    };
+
+    //Method for controlling alert messages. type is string of 'warning','danger','success', or 'info'.
+    //Message is the text to be displayed.
+    var removeMessge;
+    $scope.newAlert = function(type, message) {
+      // Dont create a new alert if one already exists
+      if( angular.isDefined(removeMessge) ) return;
+
+      removeMessge = $interval(function(){
+        $scope.closeAlert();
+      },6000);
+
+      $scope.alert = true;
+      $scope.alertType = type;
+      $scope.alertMessage = message;
+    };
+    //assigned to the 'x' on the alert box. Closes the alert and cancels the interval.
+    $scope.closeAlert = function(){
+      $scope.alert = false;
+      $interval.cancel(removeMessge);
+      removeMessge = undefined;
     };
 
 

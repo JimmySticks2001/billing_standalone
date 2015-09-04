@@ -7,7 +7,7 @@ This is a standalone, desktop all that is used to test Avatar billing before fin
 * Find out what the hell it is supposed to do.
 
 
-You started to copy what the dude did in pearl. Take a closer look at the time format for GS row in 835.
+You added the alert for things. Maybe turn it into a controller for custom alerts. Also animate the appearance and removal.
 
 
 #### Usefull things

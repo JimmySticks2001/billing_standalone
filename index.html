@@ -2,7 +2,7 @@
 <html ng-app="application">
   <head>
     <meta charset="utf-8" />
-    <title>Testing bologna</title>
+    <title>Avatar Billing Verification</title>
     <link rel="stylesheet" href="css/app.css">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -13,17 +13,20 @@
     <link href="css/ripples.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
     <script src="./js/ng-file-upload.min.js"></script>
     <script src="./js/controllers/application.js"></script>
     <script src="./js/routes/routes.js"></script>
 
+    <!-- other non angular/bootstrap js libs -->
     <script src="./js/dateFormat.js"></script>
+    <script src="./js/mousetrap.min.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <body ng-controller="UploadController">
+  <body id="body" ng-controller="UploadController">
 
     <!-- Header -->
     <div class="header row">
@@ -42,7 +45,11 @@
         </a>
         <ul class="dropdown-menu">
           <!-- <li><a href="#/">Login</a></li> -->
-          <li><a href="" ng-click="newUpload()">Import 837</a></li>
+          <li><a href="" ng-click="newUpload()">
+            <span class="menuItem">Import 837</span>
+            <span class="text-muted menuCommand">Ctrl+N</span>
+          </a></li>
+
           <!-- <li class="disabled" id="export835"><a href="" ng-click="export835()">Export 835</a></li> -->
           <li class="divider"></li>
           <!-- <li><a href="javascript:void(0)">Preferences</a></li> -->
@@ -75,10 +82,16 @@
     -->
     </div>
 
-
     <!-- main content -->
     <div id="page" class="body row scroll-y scroll-x">
+
+      <div ng-if="alert" class="alert alert-dismissable alert-{{alertType}}">
+        <button type="button" class="close" ng-click="closeAlert()">×</button>
+        <strong>Error:</strong> {{alertMessage}}
+      </div>
+
       <!-- <div ng-view></div> -->
+
       <div
         class="drop-box"
         ng-model="file"
@@ -94,7 +107,7 @@
           <div class="panel panel-default">
             <!-- <div class="panel-heading">837</div> -->
             <div class="panel-body fileStuffs">
-              <h3>{{ fileName }}</h3>
+              <h3 class="fileNameMargin">{{ fileName }}</h3>
               <p>{{ fileContents }}</p>
             </div>
           </div>
@@ -103,14 +116,21 @@
           <div class="panel panel-default">
             <!-- <div class="panel-heading">835</div> -->
             <div class="panel-body fileStuffs">
-              <input type="text" class="x835filenamebuff form-control input-lg" placeholder="835 filename">
+
+
+              <div class="input-group x835filenamebuff">
+                <input ng-model="x835saveFileName" type="text" class="form-control input-lg" placeholder="835 filename">
+                <span class="input-group-btn">
+                  <button ng-click="export835()" class="btn btn-primary btn-flat" type="button"><i class="mdi-content-save"></i></button>
+                </span>
+              </div>
               <p>{{ x835FileContents }}</p>
             </div>
           </div>
         </div>
       </div>
 
-      <input style="" id="fileDialog" class="displayNone" type="file" nwsaveas="835.txt"/>
+      <input style="" id="fileDialog" class="displayNone" type="file" nwsaveas="{{x835saveFileName}}.txt"/>
     </div> <!--end page -->
 
     <script src="js/bootstrap.js"></script>
